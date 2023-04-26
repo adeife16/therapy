@@ -135,7 +135,7 @@ function getStates(){
 
 // show states dropdown
 function showStates(data){
-	$("#state").html(`<option value="">Select State</option>`);
+	$("#state").html(`<option value="">Select Location</option>`);
 	for (var i = 0; i < data.length; i++) {
 	  $("#state").append(`
 	    <option value="`+data[i].id+`">`+data[i].nicename+`</option>
