@@ -45,5 +45,9 @@
 <?php if ($title == "Login Page"): ?>
 	<script type="text/javascript" src="js/login.js"></script>
 <?php endif ?>
+
+<?php if ($title == "Profile Page"): ?>
+	<script type="text/javascript" src="js/profile.js"></script>
+<?php endif ?>
 </body>
 </html>

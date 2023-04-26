@@ -54,3 +54,69 @@ body{
   display: none;
 }
 /***********/
+
+/*Custom Color*/
+.black{
+  background: #000000 !important;
+}
+.color-black{
+  color: #000000 !important;
+}
+.brown{
+  background: #640606 !important;
+}
+.color-brown{
+  color: #640606 !important;
+}
+.red{
+  background: #cb0000 !important;
+}
+.color-red{
+  color: #cb0000 !important;
+}
+.orange{
+  background: #ff5400 !important;
+}
+.color-orange{
+  color: #ff5400 !important;
+}
+.green{
+  background: #257409 !important;
+}
+.color-green{
+    color: #257409 !important;
+}
+.white{
+  background: #ffffff !important;
+}
+.color-white{
+  color: #ffffff !important;
+}
+.color-gold{
+  color: #ffd700 !important;
+}
+.gold{
+  background: #ffd700 !important;
+}
+.border-orange{
+  border: 1px solid #ff5400;
+}
+.hover-orange:hover{
+  color: #fff !important;
+  background: #ff5400;
+}
+/***********/
+
+/*profilePage*/
+.picture-div{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.profile-image{
+  width: 150px;  
+  height: 150px;
+  border-radius: 10px !important;
+  align-self: center;
+}
