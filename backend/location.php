@@ -7,7 +7,7 @@
 	// get all states
 	if(isset($_GET['getState']) && $_GET['getState'] == 'all')
 	{
-		$states = $db->fetch("states");
+		$states = $db->fetch("country");
 
 		$json = array("status" => 200, "data" => $states);
 

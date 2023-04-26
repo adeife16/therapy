@@ -138,7 +138,7 @@ function showStates(data){
 	$("#state").html(`<option value="">Select State</option>`);
 	for (var i = 0; i < data.length; i++) {
 	  $("#state").append(`
-	    <option value="`+data[i].id+`">`+data[i].state_name+`</option>
+	    <option value="`+data[i].id+`">`+data[i].nicename+`</option>
 	    `)
 	}
 }
