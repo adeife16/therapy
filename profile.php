@@ -1,6 +1,12 @@
 <?php 
 	$title = "Profile Page";
 	require_once 'header.php';
+	// user access control
+	session_start();
+	if (!isset($_SESSION['user_id']))
+	{
+		header('Location: index.php');
+	}
 ?>
 	<style>
 	    .display-pic{

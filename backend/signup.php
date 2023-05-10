@@ -22,22 +22,15 @@ if(isset($_POST['fname']) && $_POST['fname'] != "")
 
 	$db = new Database();
 
+	// encrypt password using password_hash()
+	$password = password_hash($password, PASSWORD_DEFAULT);
 	$data = array(
 	'user_id' => $user_id,
     'first_name' => $fname,
     'last_name' => $lname,
     'email' => $email,
-    'password' => password_hash($password, PASSWORD_DEFAULT)
+    'password' => $password
     );
-
-
-	// check if user exists
-	// $selectFields = array('*');
-	// $whereClauses = array(
-	//     array('field' => 'email', 'operator' => '=', 'value' => $email),
-	// );
-	// $check = $db->selectWhere('five_users', $selectFields, $whereClauses);
-
 
 	// create user
 	$insert = $db->insert('user', $data);

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "google/apiclient": "^2.0",
+        "openai-php/client": "^0.4.2",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

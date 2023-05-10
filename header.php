@@ -11,10 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.min.css">
 </head>
-<body class="">
-<div class="">
+<body class="gradient-custom">
+<div class="" style="margin-bottom: 100px;">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="#">Healing Haven</a>
+	  <a class="navbar-brand" href="index.php">Healing Haven</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -29,8 +29,8 @@
 	        Chatbot
 	    	</a>
 	        <div class="dropdown-menu">
-	          <a class="dropdown-item" href="#">New Session</a>
-	          <a class="dropdown-item" href="#">Session History</a>
+	          <a class="dropdown-item" href="chat.php">New Session</a>
+	          <a class="dropdown-item" href="chat_history.php">Session History</a>
 <!-- 	          <div class="dropdown-divider"></div>
 	          <a class="dropdown-item" href="#">Something else here</a> -->
 	        </div>

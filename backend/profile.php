@@ -46,7 +46,9 @@ if(isset($_POST['fname']) AND $_POST['fname'] != "")
 	$updateFields = array("first_name", "last_name", "location", "about");
 	$updateValues = array($fname, $lname, $state, $about);
 
+	// update table
 	$update = $db->updateWhere('user', $updateFields, $updateValues, 'user_id', $_SESSION['user_id']);
+	// send respose
 	if($update > 0)
 	{
 		$json = array("status" => 200);

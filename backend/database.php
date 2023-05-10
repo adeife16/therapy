@@ -80,5 +80,44 @@ class Database
         $stmt->execute([$whereValue]);
         return $stmt->rowCount();
     }
+
+        // Method that selects specific fields from a table using a WHERE clause and sorts the results in ascending order
+    public function selectWhereAsc($table, $selectFields, $whereField, $whereValue, $orderByField) {
+        $selectFields = implode(',', $selectFields);
+        $stmt = $this->pdo->prepare("SELECT $selectFields FROM $table WHERE $whereField = ? ORDER BY $orderByField ASC");
+        $stmt->execute([$whereValue]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+        // Method that selects distinct values from a table using a WHERE clause
+    public function selectDistinctWhere($table, $selectField, $whereField, $whereValue) {
+        $stmt = $this->pdo->prepare("SELECT DISTINCT $selectField FROM $table WHERE $whereField = ?");
+        $stmt->execute([$whereValue]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+        // Method that selects all from a database using multiple JOIN statements
+    public function selectJoin($selectFields, $fromTable, $joinStatements) {
+        $selectFields = implode(',', $selectFields);
+        $joinStatements = implode(' ', $joinStatements);
+
+        $stmt = $this->pdo->prepare("SELECT $selectFields FROM $fromTable $joinStatements");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+        // Method that selects all from a database using multiple WHERE clauses and multiple JOIN statements
+    public function selectJoinWhere($selectFields, $fromTable, $joinStatements, $whereClauses) {
+        $selectFields = implode(',', $selectFields);
+        $joinStatements = implode(' ', $joinStatements);
+        foreach ($whereClauses as $whereClause) {
+            $whereConditions[] = "{$whereClause['field']} {$whereClause['operator']} ?";
+            $whereValues[] = $whereClause['value'];
+        }
+        $whereConditions = implode(' AND ', $whereConditions);
+        $stmt = $this->pdo->prepare("SELECT $selectFields FROM $fromTable $joinStatements WHERE $whereConditions");
+        $stmt->execute($whereValues);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
