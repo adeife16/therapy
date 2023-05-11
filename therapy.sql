@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 05, 2023 at 08:12 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Host: localhost
+-- Generation Time: May 11, 2023 at 10:36 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -342,6 +342,28 @@ INSERT INTO `country` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `phon
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `message`) VALUES
+(1, 'Opeyemi Dada', 'dadaadeife@gmail.com', 'Thanks to the therapy I received at Healing Haven, I now feel more confident and empowered to take on life\'s challenges. I am grateful for the support and guidance I received from my therapist, and I would highly recommend Healing Haven to anyone seeking therapy'),
+(2, 'Paul Dada', 'adeinfo94@gmail.com', 'I came to Healing Haven feeling overwhelmed and anxious. From the moment I met my therapist, I felt heard and understood. She created a safe space for me to explore my thoughts and feelings, and helped me develop coping strategies to manage my anxiety.'),
+(3, 'Paul Dada', 'adeinfo94@gmail.com', 'I came to Healing Haven feeling overwhelmed and anxious. From the moment I met my therapist, I felt heard and understood. She created a safe space for me to explore my thoughts and feelings, and helped me develop coping strategies to manage my anxiety');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `forum`
 --
 
@@ -487,6 +509,12 @@ ALTER TABLE `country`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `forum`
 --
 ALTER TABLE `forum`
@@ -528,6 +556,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `country`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `forum`

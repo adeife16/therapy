@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-6 color-white">
 				<p class="copyright">
-					<?php print date('Y'); ?> © Healing Haven. All Rights Reserved.
+					<?php print date('Y') ?> © Healing Haven. All Rights Reserved.
 				</p>
 			</div>
 			<div class="col-md-6">
@@ -38,9 +38,6 @@
 		</div>
 	</div>
 </div>
-<?php if ($title == "Home Page"): ?>
-	<script type="text/javascript" src="js/index.js"></script>
-<?php endif ?>
 <?php if ($title == "Signup Page"): ?>
 	<script type="text/javascript" src="js/signup.js"></script>
 <?php endif ?>
