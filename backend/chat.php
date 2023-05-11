@@ -19,7 +19,7 @@ if($prompt == "")
 }
 $conv_id = $_POST['id'];
 
-$apiKey = "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";
+$apiKey = "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";
 $client = OpenAI::client($apiKey);
 
 // connect to openai api 
