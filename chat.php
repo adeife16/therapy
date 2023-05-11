@@ -1,6 +1,10 @@
 <?php
 	$title = "Chatbot Session";
 	require_once 'header.php';
+    if (!isset($_SESSION['user_id']))
+  {
+    header('Location: login.php');
+  }
 ?>
 <!DOCTYPE html>
   <div class="container gradient-custom mt-5">

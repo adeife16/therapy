@@ -19,8 +19,8 @@ if($prompt == "")
 }
 $conv_id = $_POST['id'];
 
-$yourApiKey = "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";
-$client = OpenAI::client($yourApiKey);
+$apiKey = "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";
+$client = OpenAI::client($apiKey);
 
 // connect to openai api 
 $response = $client->chat()->create([
